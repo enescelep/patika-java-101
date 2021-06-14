@@ -26,5 +26,6 @@ public class Main {
 
         double toplam = (armut + elma  + domates + muz + patlican);
         System.out.print("Toplam tutar : " + toplam);
+
     }
 }
