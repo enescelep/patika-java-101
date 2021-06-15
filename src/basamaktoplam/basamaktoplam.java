@@ -1,3 +1,5 @@
+package basamaktoplam;
+
 import java.util.Scanner;
 
 public class basamaktoplam {
