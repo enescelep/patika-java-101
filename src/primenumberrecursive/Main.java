@@ -1,16 +1,22 @@
 package primenumberrecursive;
 
+import java.util.Scanner;
+
 public class Main {
 
-    public static boolean isPrimeNumber(int number, int i) {
-
-        if (number == 1) return false;
-        if (number == 2) return true;
-        if (number % i == 0) return false;
-        return isPrimeNumber(number, i - 1);
+    public static void primeNumber(int number) {
+        //Sıfıra doğru giderken
+        if(number > 0) {
+            System.out.print(number + " ");
+            primeNumber(number-5);
+        }
+        //Sıfırdan sonra tekrardan artarken
+        System.out.println(number + " ");
     }
 
     public static void main(String[] args) {
-        System.out.println(isPrimeNumber(10,2));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Lütfen bir sayı giriniz: ");
+        int number = scanner.nextInt();
     }
 }
