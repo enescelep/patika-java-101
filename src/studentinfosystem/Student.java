@@ -6,7 +6,7 @@ public class Student {
     Course mat;
     Course fizik;
     Course kimya;
-    double avarage;
+    double average;
     boolean isPass;
 
 
@@ -38,13 +38,29 @@ public class Student {
 
     }
 
+    public void addBulkVerbalNote(int mat, int fizik, int kimya) {
+
+        if (mat >= 0 && mat <= 100) {
+            this.mat.verbalNote = mat;
+        }
+
+        if (fizik >= 0 && fizik <= 100) {
+            this.fizik.verbalNote = fizik;
+        }
+
+        if (kimya >= 0 && kimya <= 100) {
+            this.kimya.verbalNote = kimya;
+        }
+
+    }
+
     public void isPass() {
         if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0) {
             System.out.println("Notlar tam olarak girilmemiş");
         } else {
             this.isPass = isCheckPass();
             printNote();
-            System.out.println("Ortalama : " + this.avarage);
+            System.out.println("Ortalama : " + this.average);
             if (this.isPass) {
                 System.out.println("Sınıfı Geçti. ");
             } else {
@@ -54,12 +70,15 @@ public class Student {
     }
 
     public void calcAvarage() {
-        this.avarage = (this.fizik.note + this.kimya.note + this.mat.note) / 3;
+        double fizik = (this.fizik.note * this.fizik.examNoteEffect) + (this.fizik.verbalNote * this.fizik.verbalNoteEffect);
+        double kimya = (this.kimya.note * this.kimya.examNoteEffect) + (this.kimya.verbalNote * this.kimya.verbalNoteEffect);
+        double mat = (this.mat.note * this.mat.examNoteEffect) + (this.mat.verbalNote * this.mat.verbalNoteEffect);
+        this.average = (fizik + kimya + mat) / 3;
     }
 
     public boolean isCheckPass() {
         calcAvarage();
-        return this.avarage > 55;
+        return this.average > 55;
     }
 
     public void printNote(){
