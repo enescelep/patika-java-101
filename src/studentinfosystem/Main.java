@@ -3,7 +3,7 @@ package studentinfosystem;
 public class Main {
     public static void main(String[] args) {
 
-        Course mat = new Course("Matematik", "MAT101", "MAT");
+       /* Course mat = new Course("Matematik", "MAT101", "MAT");
         Course fizik = new Course("Fizik", "FZK101", "FZK");
         Course kimya = new Course("Kimya", "KMY101", "KMY");
 
