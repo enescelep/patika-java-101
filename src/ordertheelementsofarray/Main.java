@@ -12,6 +12,7 @@ public class Main {
         for(int i = 0; i<array.length; i++){
             array[i] = scan.nextInt();
         }
+
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
     }
